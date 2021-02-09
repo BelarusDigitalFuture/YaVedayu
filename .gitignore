@@ -1,6 +1,10 @@
 npm-debug.*
 .idea/*
+.vscode/
 node_modules/**/*
+
+# prod
+dist/
 
 # macOS
 .DS_Store
