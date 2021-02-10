@@ -1,5 +1,6 @@
 import Fuse from 'fuse.js';
 import streets from '../db/streets';
+import { getImage } from 'yandex-pictures';
 
 export async function getTestData(req, res) {
   res.status(200).json({
@@ -22,6 +23,23 @@ export async function search(req, res) {
 
   const result = fuse.search(req.query.search);
   console.log(result);
+  if (result.length) {
+    const { type, name } = result[0].item;
+
+    const images = await getImage({
+      text: `минск красивое фото ${type} ${name}`,
+      isize: 'wallpaper',
+      family: 2,
+      count: 3
+    }, (a, b) => {console.log(a, b)});
+
+    getImage({
+      text: "JSusDev",
+      count: 2
+    }).then(console.log)
+
+    console.log(images);
+  }
 
   await res
     .status(200)
