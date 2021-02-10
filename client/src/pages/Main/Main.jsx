@@ -1,23 +1,62 @@
-import React from 'react';
-import { Map, YMaps } from 'react-yandex-maps';
+import React, { useCallback, useRef, useState } from 'react';
+import { Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
 import './Main.css';
 import { Informer } from '../../components/Informer/Informer';
+import { getAddressContent } from '../../api/api';
+import { useContent } from '../../providers/ContentProvider';
 
 
 export const Main = ({}) => {
+  const [coords, setCoords] = useState([53.918162, 27.603702]);
+  const placemarkRef = useRef(null);
+  const [maps, setMaps] = useState(null);
+  const { updateContent, updateAddress, address } = useContent();
+
+
+  const handleClick = useCallback((e) => {
+    if (!maps) {
+      return null;
+    }
+
+    const coords = e.get('coords');
+    setCoords(coords);
+    // placemarkRef.current.geometry.setCoordinates(coords);
+    maps.geocode(coords).then((res) => {
+      const address = res.geoObjects.get(0).getThoroughfare();
+      updateAddress(address)
+      getAddressContent(address).then(content => {
+        updateContent(content[0]?.content);
+      });
+    });
+  }, [maps]);
+
   return (
     <div className={'main'}>
-      <YMaps
-        query={{ lang: 'ru_RU' }}
-        apikey={'ee89beff-0989-4039-8c8c-87f25e0ad746'}
+      <Map
+        className={'main__map'}
+        defaultState={{ center: coords, zoom: 14 }}
+        modules={['geolocation', 'geocode']}
+        onClick={handleClick}
+        onLoad={(ymaps) => {
+          setMaps(ymaps);
+        }}
       >
-        <Map
-          className={'main__map'}
-          defaultState={{ center: [53.918162, 27.603702], zoom: 14 }}
-        />
-      </YMaps>
+        <ZoomControl options={{ float: 'right' }}/>
+        {/*<GeolocationControl options={{ float: 'right' }}*/}
+        {/*                    onLoad={(ymaps) => getGeoLocation(ymaps)}*/}
+        {/*                    instanceRef={(map) => handleClick(map)}*/}
+        {/*/>*/}
 
+        <Placemark
+          // ref={placemarkRef}
+          modules={["geoObject.addon.balloon"]}
+          geometry={coords}
+          properties={{
+            balloonContentBody: address,
+          }}
+        />
+      </Map>
       <Informer/>
     </div>
   );

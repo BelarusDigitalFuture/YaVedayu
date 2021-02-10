@@ -12,6 +12,9 @@ module.exports = {
     port: 3001,
     open: false,
     liveReload: false,
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
   },
   module: {
     rules: [
