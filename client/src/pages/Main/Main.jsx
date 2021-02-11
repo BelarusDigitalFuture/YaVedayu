@@ -1,9 +1,9 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
 import { Informer } from '../../components/Informer/Informer';
 import { Autosuggest } from '../../components/Autosuggest/Autosuggest';
-import { getAddressContent } from '../../api/api';
+import { getAddressContent, getAddressContentById } from '../../api/api';
 import { useContent } from '../../providers/ContentProvider';
 
 import './Main.css';
@@ -11,9 +11,21 @@ import './Main.css';
 
 export const Main = ({}) => {
   const [coords, setCoords] = useState([53.918162, 27.603702]);
-  const placemarkRef = useRef(null);
   const [maps, setMaps] = useState(null);
   const { updateContent, updateAddress, address } = useContent();
+
+  useEffect(() => {
+    const query = new URLSearchParams(document.location.search);
+    const streetId = query.get('id');
+
+    if (streetId) {
+      getAddressContentById(streetId)
+      .then(({ name, ...content }) => {
+        updateAddress(name);
+        updateContent(content);
+      })
+    }
+  }, []);
 
 
   const handleClick = useCallback((e) => {
