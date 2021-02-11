@@ -33,10 +33,10 @@ export const Autosuggest = ({}) => {
     setValue(newValue);
   };
 
-  const handleSelectValue = ({ name, content }) => {
-    updateAddress(name);
-    updateContent(content)
-    return name;
+  const handleSelectValue = (suggestion) => {
+    updateAddress(suggestion.name);
+    updateContent(suggestion)
+    return suggestion.name;
   };
 
   const handleFetchSuggestions = ({ value }) => {

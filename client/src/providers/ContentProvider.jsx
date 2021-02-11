@@ -20,7 +20,7 @@ export function useContent() {
 
 export const ContentProvider = ({ children }) => {
   const [address, updateAddress] = useState('');
-  const [content, updateContent] = useState('');
+  const [content, updateContent] = useState({});
 
   const value = useMemo(() => ({
     address,

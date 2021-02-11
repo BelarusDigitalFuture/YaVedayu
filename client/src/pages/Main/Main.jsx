@@ -28,7 +28,7 @@ export const Main = ({}) => {
       const address = res.geoObjects.get(0).getThoroughfare();
       updateAddress(address)
       getAddressContent(address).then(content => {
-        updateContent(content[0]?.content);
+        updateContent(content[0] || {});
       });
     });
   }, [maps]);

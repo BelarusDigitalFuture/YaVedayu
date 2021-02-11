@@ -8,7 +8,11 @@ const DEFAULT_SUBTITLE = 'Подскажем историю улиц вашег�
 const DEFAULT_CONTENT = 'Используйте поиск или выберите улицу на карте.';
 
 export const Informer = ({}) => {
-  const { address, content } = useContent();
+  const { address, content: info } = useContent();
+  const { content, images = [], wiki_link } = info;
+
+  const mainImageUrl = images.length ? images[0].url : null;
+  const description = content ? content.trim() : '';
 
   return (
     <div className="informer">
@@ -23,8 +27,15 @@ export const Informer = ({}) => {
       <div className="informer-content">
         {address ? (
           <Fragment>
-            <div className="informer-content__img" />
-            <div>{content || 'Wiki link..'}</div>
+            <img alt={address} className="informer-content__img" src={mainImageUrl} />
+            <div>
+              {description || (
+                <Fragment>
+                  <span>К сожалению, сейчас не можем тебе подсказать, давай поищем вместе </span>
+                  <a href={wiki_link} rel="noopener noreferrer" target="_blank">здесь</a>
+                </Fragment>
+              )}
+            </div>
           </Fragment>
         ) : DEFAULT_CONTENT}
       </div>
