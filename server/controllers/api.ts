@@ -39,6 +39,7 @@ export async function search(req, res) {
           result
             .map(item => ({
               ...item.item,
+              id: item.i,
               images: images.splice(0, 3),
             }))
             .splice(0, Math.max(1, limit))
