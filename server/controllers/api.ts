@@ -22,7 +22,9 @@ export async function search(req, res) {
     search,
   } = req.query;
 
-  const normalizedArray = search.replace('\\\n', '\n').split('\\n').filter(t => t.length > 5);
+  let normalizedArray = search.replace('\\\n', '\n').split('\\n');
+  normalizedArray = Array.isArray(normalizedArray) ? normalizedArray : [normalizedArray];
+  normalizedArray = normalizedArray.filter(t => t.length > 4);
 
   const fuse = new Fuse(streets, {
     includeScore: true,
@@ -52,7 +54,7 @@ export async function search(req, res) {
           .splice(0, Math.max(1, limit)),
       );
   } else {
-    res.status(200).json({});
+    res.status(200).json([]);
   }
 }
 
