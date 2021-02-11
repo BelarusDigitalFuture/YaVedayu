@@ -25,10 +25,13 @@ export async function search(req, res) {
   let normalizedArray = search.replace('\\\n', '\n').split('\\n');
   normalizedArray = Array.isArray(normalizedArray) ? normalizedArray : [normalizedArray];
   normalizedArray = normalizedArray.filter(t => t.length > 4);
+  normalizedArray = normalizedArray.map(item => {
+    return item.replace(/([^а-яё0-9\s])*/gi, '');
+  });
 
   const fuse = new Fuse(streets, {
     includeScore: true,
-    // threshold: 0.5,
+    threshold: 0.8,
     distance: 300,
     ignoreLocation: true,
     keys: ['type', 'name'],
@@ -38,6 +41,7 @@ export async function search(req, res) {
     return [...acc, ...fuse.search(search)];
   }, []).sort((left, right) => left.score - right.score);
 
+  console.log(normalizedArray);
   if (result.length) {
     const { type, name } = result[0].item;
 
