@@ -9,23 +9,28 @@ export async function getTestData(req, res) {
 }
 
 export async function search(req, res) {
-  console.log(req.query.search);
   const {
     limit = 1,
-    query: search,
+    search,
   } = req.query;
+
+  const normalizedArray = search.replace('\\\n', '\n').split('\\n').filter(t => t.length > 5);
 
   const fuse = new Fuse(streets, {
     includeScore: true,
-    threshold: 0.5,
+    // threshold: 0.5,
+    distance: 300,
+    ignoreLocation: true,
     keys: ['type', 'name'],
   });
 
-  const result = fuse.search(req.query.search);
-  console.log(result);
+  const result = normalizedArray.reduce((acc, item) => {
+    return [...acc, ...fuse.search(search)]
+  }, []).sort((left, right) => left.score - right.score);
+
   if (result.length) {
     const { type, name } = result[0].item;
-    //
+
     // const images = await getImage({
     //   text: `минск красивое фото ${type} ${name}`,
     //   isize: 'wallpaper',

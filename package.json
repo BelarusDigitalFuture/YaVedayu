@@ -20,10 +20,12 @@
   "homepage": "https://github.com/BelarusDigitalFuture/YaVedayu#readme",
   "dependencies": {
     "cookie-parser": "^1.4.5",
+    "cyrillic-to-translit-js": "^3.1.0",
     "express": "^4.17.1",
     "fuse.js": "^6.4.6",
     "fuzzysearch": "^1.0.3",
     "google-images": "^2.1.0",
+    "normalize-text": "^2.3.1",
     "yandex-pictures": "^1.4.88"
   },
   "devDependencies": {
