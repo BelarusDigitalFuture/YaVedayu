@@ -16,6 +16,15 @@ async function findImages(street) {
   });
 }
 
+function prepareStreetResponse(street) {
+  return {
+    ...street,
+    id: street.i,
+    content: street.content ? street.content : `https://ru.wikipedia.org/w/index.php?search=${street.name}`,
+    wiki_link: `https://ru.wikipedia.org/w/index.php?search=${street.name}`,
+  }
+}
+
 export async function search(req, res) {
   const {
     limit = 1,
@@ -41,7 +50,6 @@ export async function search(req, res) {
     return [...acc, ...fuse.search(search)];
   }, []).sort((left, right) => left.score - right.score);
 
-  console.log(normalizedArray);
   if (result.length) {
     const { type, name } = result[0].item;
 
@@ -51,10 +59,7 @@ export async function search(req, res) {
       .status(200)
       .json(
         result
-          .map(item => ({
-            ...item.item,
-            id: item.i,
-          }))
+          .map(item => prepareStreetResponse(item.item))
           .splice(0, Math.max(1, limit)),
       );
   } else {
@@ -73,11 +78,7 @@ export async function getStreet(req, res) {
 
   await res
     .status(200)
-    .json({
-      ...street,
-      id: street.i,
-      images,
-    });
+    .json(prepareStreetResponse({ ...street, images }));
 }
 
 export async function getStats(req, res) {
