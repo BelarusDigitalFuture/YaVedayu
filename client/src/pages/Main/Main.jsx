@@ -59,7 +59,7 @@ export const Main = ({}) => {
           }}
         />
       </Map>
-      {/* <Autosuggest /> */}
+      <Autosuggest />
       <Informer />
     </div>
   );

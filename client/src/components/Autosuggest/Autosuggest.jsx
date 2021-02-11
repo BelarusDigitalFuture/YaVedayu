@@ -1,40 +1,83 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import ReactAutosuggest from 'react-autosuggest';
+import debounce from 'lodash.debounce';
 
+import { useContent } from '../../providers/ContentProvider';
+import { getAddressContent } from '../../api/api';
 import './Autosuggest.css';
 
 const noop = () => {};
 
-export const Autosuggest = ({ onSelectStreet }) => {
-  const [value, setValue] = useState('');
+const DEBOUNCE_INTERVAL = 500;
+const SUGGESTIONS_COUNT = 3;
+
+export const Autosuggest = ({}) => {
+  const { updateContent, updateAddress, address } = useContent();
+  const [value, setValue] = useState(address);
   const [suggestions, setSuggestions] = useState([]);
 
-  const onChange = (e, { newValue }) => {
+  useEffect(() => {
+    setValue(address || '');
+  }, [address]);
+
+  const debouncedSuggestionsFetch = useMemo(
+    () => debounce((value) => {
+        getAddressContent(value, SUGGESTIONS_COUNT)
+          .then((res) => setSuggestions(res))
+          .catch((e) => setSuggestions([]))
+      }, DEBOUNCE_INTERVAL),
+    [DEBOUNCE_INTERVAL]
+  );
+
+  const handleChange = (e, { newValue }) => {
     setValue(newValue);
   };
+
+  const handleSelectValue = ({ name, content }) => {
+    updateAddress(name);
+    updateContent(content)
+    return name;
+  };
+
+  const handleFetchSuggestions = ({ value }) => {
+    debouncedSuggestionsFetch(value);
+  }; 
 
   const inputProps = useMemo(() => ({
     placeholder: 'Введите название улицы',
     value,
-    onChange: onChange
-  }), [onChange, value]);
+    onChange: handleChange
+  }), [handleChange, value]);
 
-  const renderInputComponent = (inputProps) => (
-    <div className="inputContainer">
-      <span className="icon" />
-      <input {...inputProps} />
-    </div>
+  const renderInputComponent = useCallback(
+    (inputProps) => (
+      <div className="input__container">
+        <span className="input__icon" />
+        <input {...inputProps} />
+      </div>
+    ),
+    []
+  );
+
+  const renderSuggestion = useCallback(
+    (suggestion) => (
+      <div className="item__container">
+        <span className="item__icon" />
+        <span>{suggestion.type} {suggestion.name}</span>
+      </div>
+    ),
+    []
   );
   
   return (
     <div className="autosuggest">
       <ReactAutosuggest
         inputProps={inputProps}
-        suggestions={suggestions }
-        onSuggestionsFetchRequested={noop}
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={handleFetchSuggestions}
         onSuggestionsClearRequested={noop}
-        getSuggestionValue={onSelectStreet}
-        renderSuggestion={noop}
+        getSuggestionValue={handleSelectValue}
+        renderSuggestion={renderSuggestion}
         renderInputComponent={renderInputComponent}
       />
     </div>

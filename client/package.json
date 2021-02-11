@@ -9,8 +9,9 @@
     "build-client": "webpack --mode production"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "@babel/runtime": "^7.12.13",
+    "axios": "^0.21.1",
+    "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-autosuggest": "^10.1.0",
