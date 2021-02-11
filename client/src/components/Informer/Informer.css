@@ -11,6 +11,29 @@
     font-family: Open Sans;
 }
 
+.informer-header {
+    display: flex;
+}
+
+.informer-header__icon {
+    width: 52px;
+    height: 52px;
+    margin-right: 15px;
+    border-radius: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.address-icon {
+    background-color: #fff;
+    background-image: url('../../assets/location.svg');
+}
+
+.initial-icon {
+    background-color: #2D2E8D;
+    background-image: url('../../assets/sign.svg');
+}
+
 .informer-header__title {
     margin: 0;
     font-size: 24px;
@@ -26,11 +49,16 @@
 }
 
 .informer-separator {
+    height: 1px;
+    width: 100%;
     margin: 15px 0;
+    background-color: rgba(196, 196, 196, 0.4);
 }
 
 .informer-content {
     max-height: 400px;
+    margin-right: -10px;
+    padding-right: 10px;
     font-size: 18px;
     line-height: 27px;
     color: #111;

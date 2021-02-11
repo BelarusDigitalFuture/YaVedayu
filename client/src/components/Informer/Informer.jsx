@@ -12,11 +12,14 @@ export const Informer = ({}) => {
 
   return (
     <div className="informer">
-      <div>
-        <p className="informer-header__title">{address || DEFAULT_TITLE}</p>
-        <p className="informer-header__subtitle">{address ? 'Минск' : DEFAULT_SUBTITLE}</p>
+      <div className="informer-header">
+        <div className={`informer-header__icon ${address ? 'address-icon' : 'initial-icon'}`} />
+        <div>
+          <p className="informer-header__title">{address || DEFAULT_TITLE}</p>
+          <p className="informer-header__subtitle">{address ? 'Минск' : DEFAULT_SUBTITLE}</p>
+        </div>
       </div>
-      <hr className="informer-separator" />
+      <div className="informer-separator" />
       <div className="informer-content">
         {address ? (
           <Fragment>

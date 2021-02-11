@@ -35,13 +35,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|png)$/i,
+        test: [/\.(bmp|gif|jpe?g|png|svg)$/],
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              encoding: false,
-            },
+            loader: 'url-loader'
           },
         ],
       }
