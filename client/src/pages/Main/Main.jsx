@@ -1,10 +1,12 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
-import './Main.css';
 import { Informer } from '../../components/Informer/Informer';
+import { Autosuggest } from '../../components/Autosuggest/Autosuggest';
 import { getAddressContent } from '../../api/api';
 import { useContent } from '../../providers/ContentProvider';
+
+import './Main.css';
 
 
 export const Main = ({}) => {
@@ -57,7 +59,8 @@ export const Main = ({}) => {
           }}
         />
       </Map>
-      <Informer/>
+      {/* <Autosuggest /> */}
+      <Informer />
     </div>
   );
 };

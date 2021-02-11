@@ -1,0 +1,25 @@
+.autosuggest {
+  position: fixed;
+  top: 50px;
+  left: 250px;
+}
+
+.react-autosuggest__container {
+  width: 533px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 1px 4px rgba(25, 44, 62, 0.25), 0px 4px 6px rgba(25, 44, 62, 0.15);
+}
+
+.react-autosuggest__input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../assets/search.svg');
+}
