@@ -1,6 +1,7 @@
 import Fuse from 'fuse.js';
 import streets from '../db/streets';
 import { getImage } from 'yandex-pictures';
+import gis from 'g-i-s';
 
 export async function getTestData(req, res) {
   res.status(200).json({
@@ -31,28 +32,27 @@ export async function search(req, res) {
   if (result.length) {
     const { type, name } = result[0].item;
 
-    // const images = await getImage({
-    //   text: `минск красивое фото ${type} ${name}`,
-    //   isize: 'wallpaper',
-    //   family: 2,
-    //   count: 3
-    // }, (a, b) => {console.log(a, b)});
-    //
-    // getImage({
-    //   text: "JSusDev",
-    //   count: 2
-    // }).then(console.log)
-    //
-    // console.log(images);
+    gis(`минск красивое фото ${type} ${name}`, async (error, images = []) => {
+      await res
+        .status(200)
+        .json(
+          result
+            .map(item => ({
+              ...item.item,
+              images: images.splice(0, 3),
+            }))
+            .splice(0, Math.max(1, limit))
+        );
+    });
   }
 
-  await res
-    .status(200)
-    .json(
-      result
-        .map(item => item.item)
-        .splice(0, Math.max(1, limit))
-    );
+  // await res
+  //   .status(200)
+  //   .json(
+  //     result
+  //       .map(item => item.item)
+  //       .splice(0, Math.max(1, limit))
+  //   );
 }
 
 export async function getStats(req, res) {

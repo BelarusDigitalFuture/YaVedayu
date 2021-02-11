@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "fuse.js": "^6.4.6",
     "fuzzysearch": "^1.0.3",
+    "g-i-s": "^2.1.6",
     "google-images": "^2.1.0",
     "normalize-text": "^2.3.1",
     "yandex-pictures": "^1.4.88"
