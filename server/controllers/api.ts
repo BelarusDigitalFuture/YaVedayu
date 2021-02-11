@@ -33,7 +33,7 @@ export async function search(req, res) {
 
   let normalizedArray = search.replace('\\\n', '\n').split('\\n');
   normalizedArray = Array.isArray(normalizedArray) ? normalizedArray : [normalizedArray];
-  normalizedArray = normalizedArray.filter(t => t.length > 4);
+  normalizedArray = normalizedArray.filter(t => t.length > 1);
   normalizedArray = normalizedArray.map(item => {
     return item.replace(/([^а-яё0-9\s])*/gi, '');
   });
