@@ -8,10 +8,11 @@ import cors from 'cors';
 const app = express();
 const server = http.createServer(app);
 
+app.use(cors())
+app.use(cookieParser());
+
 app.use(api.use, api.router);
 
-app.use(cookieParser());
-app.use(cors())
 
 server.listen(3000, () => {
   console.info('Frontend started at http://localhost:3000/');
