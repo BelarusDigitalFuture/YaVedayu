@@ -48,7 +48,10 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      favicon: './src/public/logo.png'
+    }),
     new MiniCssExtractPlugin(),
   ],
 };

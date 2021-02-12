@@ -20,6 +20,15 @@
   background-image: url('../../assets/search.svg');
 }
 
+.no-results {
+  padding: 12px 15px;
+  font-size: 18px;
+  line-height: 25px;
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .react-autosuggest__container {
   width: 533px;
   border-radius: 10px;

@@ -6,8 +6,6 @@ import { useContent } from '../../providers/ContentProvider';
 import { getAddressContent } from '../../api/api';
 import './Autosuggest.css';
 
-const noop = () => {};
-
 const DEBOUNCE_INTERVAL = 500;
 const SUGGESTIONS_COUNT = 3;
 
@@ -15,16 +13,24 @@ export const Autosuggest = ({}) => {
   const { updateContent, updateAddress, address } = useContent();
   const [value, setValue] = useState(address);
   const [suggestions, setSuggestions] = useState([]);
+  const [isNoResults, setEmptyResult] = useState(false);
 
   useEffect(() => {
     setValue(address || '');
+    setEmptyResult(false);
   }, [address]);
 
   const debouncedSuggestionsFetch = useMemo(
     () => debounce((value) => {
         getAddressContent(value, SUGGESTIONS_COUNT)
-          .then((res) => setSuggestions(res))
-          .catch((e) => setSuggestions([]))
+          .then((res) => {
+            setSuggestions(res);
+            setEmptyResult(!res.length);
+          })
+          .catch((e) => {
+            setSuggestions([]);
+            setEmptyResult(true);
+          })
       }, DEBOUNCE_INTERVAL),
     [DEBOUNCE_INTERVAL]
   );
@@ -37,6 +43,10 @@ export const Autosuggest = ({}) => {
     updateAddress(suggestion.name);
     updateContent(suggestion)
     return suggestion.name;
+  };
+
+  const handleClearSuggestions = () => {
+    setSuggestions([]);
   };
 
   const handleFetchSuggestions = ({ value }) => {
@@ -68,6 +78,16 @@ export const Autosuggest = ({}) => {
     ),
     []
   );
+
+  const renderSuggestionsContainer = ({ containerProps, children, query }) => {  
+    return isNoResults
+      ? <div className="no-results">Ничего не найдено по запросу {query}</div>
+      : (
+        <div {...containerProps}>
+          {children}
+        </div>
+      );
+  }
   
   return (
     <div className="autosuggest">
@@ -75,10 +95,11 @@ export const Autosuggest = ({}) => {
         inputProps={inputProps}
         suggestions={suggestions}
         onSuggestionsFetchRequested={handleFetchSuggestions}
-        onSuggestionsClearRequested={noop}
+        onSuggestionsClearRequested={handleClearSuggestions}
         getSuggestionValue={handleSelectValue}
         renderSuggestion={renderSuggestion}
         renderInputComponent={renderInputComponent}
+        renderSuggestionsContainer={renderSuggestionsContainer}
       />
     </div>
   );
