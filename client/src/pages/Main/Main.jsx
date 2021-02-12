@@ -11,7 +11,7 @@ import './Main.css';
 
 
 export const Main = ({}) => {
-  const [coords, setCoords] = useState([53.918162, 27.603702]);
+  const [coords, setCoords] = useState([53.91823800088732, 27.585849216796873]);
   const [maps, setMaps] = useState(null);
   const { updateContent, updateAddress, address } = useContent();
 
@@ -28,6 +28,23 @@ export const Main = ({}) => {
     }
   }, []);
 
+  const prepareAddress = useCallback((coords) => {
+    if (!maps) {
+      return null;
+    }
+
+    maps.geocode(coords).then((res) => {
+      const address = res.geoObjects.get(0).getThoroughfare();
+      updateAddress(address)
+      getAddressContent(address).then(content => {
+        updateContent(content[0] || {});
+      });
+    });
+  }, [maps]);
+
+  useEffect(() => {
+    prepareAddress(coords);
+  }, [maps]);
 
   const handleClick = useCallback((e) => {
     if (!maps) {
@@ -37,14 +54,8 @@ export const Main = ({}) => {
     const coords = e.get('coords');
     setCoords(coords);
     // placemarkRef.current.geometry.setCoordinates(coords);
-    maps.geocode(coords).then((res) => {
-      const address = res.geoObjects.get(0).getThoroughfare();
-      updateAddress(address)
-      getAddressContent(address).then(content => {
-        updateContent(content[0] || {});
-      });
-    });
-  }, [maps]);
+    prepareAddress(coords)
+  }, [prepareAddress, maps]);
 
   return (
     <div className={'main'}>
@@ -55,6 +66,7 @@ export const Main = ({}) => {
         onClick={handleClick}
         onLoad={(ymaps) => {
           setMaps(ymaps);
+          prepareAddress(coords);
         }}
       >
         <ZoomControl options={{ float: 'right' }}/>
