@@ -20,7 +20,7 @@ function prepareStreetResponse(street) {
   return {
     ...street,
     id: street.i,
-    content: street.content ? street.content : null,
+    content: street.content ? street.content.trim() : null,
     wiki_link: `https://ru.wikipedia.org/w/index.php?search=${street.name}`,
   }
 }
