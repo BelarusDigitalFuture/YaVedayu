@@ -25,7 +25,9 @@
   padding: 12px 15px;
   font-size: 18px;
   line-height: 25px;
+  color: #6E787F;
   background-color: #fff;
+  border: 1px solid rgba(196, 196, 196, 0.4);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }

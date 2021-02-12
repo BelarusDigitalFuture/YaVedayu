@@ -79,9 +79,9 @@ export const Autosuggest = ({}) => {
     []
   );
 
-  const renderSuggestionsContainer = ({ containerProps, children, query }) => {  
+  const renderSuggestionsContainer = ({ containerProps, children }) => {  
     return isNoResults
-      ? <div className="no-results">Ничего не найдено по запросу {query}</div>
+      ? <div className="no-results">Ничего не найдено по запросу</div>
       : (
         <div {...containerProps}>
           {children}
