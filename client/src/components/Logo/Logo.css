@@ -1,0 +1,38 @@
+.logo {
+  display: flex;
+  height: 50px;
+  width: 160px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  overflow: hidden;
+}
+
+.logo__main-block {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  background-color: #2D2E8D;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+  z-index: 2;
+}
+
+.logo__main-block::before {
+  content: ' ';
+  width: 15px;
+  height: 20px;
+  margin-right: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/sign-mini.svg');
+}
+
+.logo__angle {
+  width: 50px;
+  margin-left: -25px;
+  background-color: #2D2E8D;
+  transform: rotate(45deg);
+}

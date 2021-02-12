@@ -3,6 +3,7 @@ import { Map, Placemark, ZoomControl } from 'react-yandex-maps';
 
 import { Informer } from '../../components/Informer/Informer';
 import { Autosuggest } from '../../components/Autosuggest/Autosuggest';
+import { Logo } from '../../components/Logo/Logo';
 import { getAddressContent, getAddressContentById } from '../../api/api';
 import { useContent } from '../../providers/ContentProvider';
 
@@ -71,6 +72,7 @@ export const Main = ({}) => {
           }}
         />
       </Map>
+      <Logo />
       <Autosuggest />
       <Informer />
     </div>
