@@ -70,3 +70,20 @@
     margin-bottom: 20px;
     background-color: #f6f6f6;
 }
+
+@media only screen and (max-width : 768px) {
+    .main .main__map {
+        display: none;
+    }
+
+    .informer {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .informer-content {
+        max-width: 100%;
+    }
+}
