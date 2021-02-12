@@ -1,13 +1,13 @@
-node_modules/**/*
-.expo/*
-npm-debug.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
-
-# macOS
 .DS_Store
+
+*.orig
+*.resolve
+
+project_BACKUP_*
+project_BASE_*
+project_LOCAL_*
+project_REMOTE_*
+
+xcuserdata
+
+Pods/

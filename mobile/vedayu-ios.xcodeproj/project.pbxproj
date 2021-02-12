@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		102652A625D5B5E300ADEABF /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102652A525D5B5E300ADEABF /* ArticleViewController.swift */; };
+		102652AA25D5B98E00ADEABF /* StreetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102652A925D5B98E00ADEABF /* StreetsService.swift */; };
+		102652C525D5C0AA00ADEABF /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102652C425D5C0AA00ADEABF /* Object.swift */; };
+		10784E0F25D49BBC003447BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10784E0E25D49BBC003447BB /* GoogleService-Info.plist */; };
+		10784E2925D4A644003447BB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10784E2825D4A644003447BB /* CameraViewController.swift */; };
+		10D7C7B125D3FD5900640C64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D7C7B025D3FD5900640C64 /* AppDelegate.swift */; };
+		10D7C7B525D3FD5900640C64 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D7C7B425D3FD5900640C64 /* MapViewController.swift */; };
+		10D7C7B825D3FD5900640C64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D7C7B625D3FD5900640C64 /* Main.storyboard */; };
+		10D7C7BA25D3FD5900640C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D7C7B925D3FD5900640C64 /* Assets.xcassets */; };
+		10D7C7BD25D3FD5900640C64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D7C7BB25D3FD5900640C64 /* LaunchScreen.storyboard */; };
+		D2A37850AB5B2FC7A499361E /* Pods_vedayu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8F9B6B126995203A7C3F2E /* Pods_vedayu_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		102652A525D5B5E300ADEABF /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		102652A925D5B98E00ADEABF /* StreetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetsService.swift; sourceTree = "<group>"; };
+		102652C425D5C0AA00ADEABF /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		10784E0E25D49BBC003447BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		10784E2825D4A644003447BB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		10D7C7AD25D3FD5900640C64 /* vedayu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vedayu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10D7C7B025D3FD5900640C64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		10D7C7B425D3FD5900640C64 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		10D7C7B725D3FD5900640C64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10D7C7B925D3FD5900640C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10D7C7BC25D3FD5900640C64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		10D7C7BE25D3FD5900640C64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9FEBA4109F73C2DEA57B53 /* Pods-vedayu-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vedayu-ios.release.xcconfig"; path = "Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios.release.xcconfig"; sourceTree = "<group>"; };
+		4B8F9B6B126995203A7C3F2E /* Pods_vedayu_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vedayu_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A48B7E45B7168FCF7458294 /* Pods-vedayu-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vedayu-ios.debug.xcconfig"; path = "Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10D7C7AA25D3FD5900640C64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2A37850AB5B2FC7A499361E /* Pods_vedayu_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1026528425D58F7200ADEABF /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				10784E2825D4A644003447BB /* CameraViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		1026528625D58F7C00ADEABF /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				10D7C7B425D3FD5900640C64 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1026528825D58F8400ADEABF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				10D7C7B025D3FD5900640C64 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		102652A425D5B5D300ADEABF /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				102652A525D5B5E300ADEABF /* ArticleViewController.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		10D7C7A425D3FD5900640C64 = {
+			isa = PBXGroup;
+			children = (
+				10D7C7AF25D3FD5900640C64 /* vedayu-ios */,
+				10D7C7AE25D3FD5900640C64 /* Products */,
+				6390D7C0A716AA60999EF8F4 /* Pods */,
+				91E73F0D7513EB42DBFC4AC0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		10D7C7AE25D3FD5900640C64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10D7C7AD25D3FD5900640C64 /* vedayu-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10D7C7AF25D3FD5900640C64 /* vedayu-ios */ = {
+			isa = PBXGroup;
+			children = (
+				1026528825D58F8400ADEABF /* AppDelegate */,
+				1026528625D58F7C00ADEABF /* Map */,
+				102652A425D5B5D300ADEABF /* Article */,
+				1026528425D58F7200ADEABF /* Camera */,
+				10784E0E25D49BBC003447BB /* GoogleService-Info.plist */,
+				102652A925D5B98E00ADEABF /* StreetsService.swift */,
+				102652C425D5C0AA00ADEABF /* Object.swift */,
+				10D7C7B625D3FD5900640C64 /* Main.storyboard */,
+				10D7C7B925D3FD5900640C64 /* Assets.xcassets */,
+				10D7C7BB25D3FD5900640C64 /* LaunchScreen.storyboard */,
+				10D7C7BE25D3FD5900640C64 /* Info.plist */,
+			);
+			path = "vedayu-ios";
+			sourceTree = "<group>";
+		};
+		6390D7C0A716AA60999EF8F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A48B7E45B7168FCF7458294 /* Pods-vedayu-ios.debug.xcconfig */,
+				2A9FEBA4109F73C2DEA57B53 /* Pods-vedayu-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		91E73F0D7513EB42DBFC4AC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B8F9B6B126995203A7C3F2E /* Pods_vedayu_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10D7C7AC25D3FD5900640C64 /* vedayu-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10D7C7C125D3FD5900640C64 /* Build configuration list for PBXNativeTarget "vedayu-ios" */;
+			buildPhases = (
+				056EA1FA2250CD23515F78FA /* [CP] Check Pods Manifest.lock */,
+				10D7C7A925D3FD5900640C64 /* Sources */,
+				10D7C7AA25D3FD5900640C64 /* Frameworks */,
+				10D7C7AB25D3FD5900640C64 /* Resources */,
+				AB2E12A7AF647233D4E850B6 /* [CP] Copy Pods Resources */,
+				09D771037790F5F904B9D092 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "vedayu-ios";
+			productName = "vedayu-ios";
+			productReference = 10D7C7AD25D3FD5900640C64 /* vedayu-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10D7C7A525D3FD5900640C64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					10D7C7AC25D3FD5900640C64 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 10D7C7A825D3FD5900640C64 /* Build configuration list for PBXProject "vedayu-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10D7C7A425D3FD5900640C64;
+			productRefGroup = 10D7C7AE25D3FD5900640C64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10D7C7AC25D3FD5900640C64 /* vedayu-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10D7C7AB25D3FD5900640C64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D7C7BD25D3FD5900640C64 /* LaunchScreen.storyboard in Resources */,
+				10D7C7BA25D3FD5900640C64 /* Assets.xcassets in Resources */,
+				10784E0F25D49BBC003447BB /* GoogleService-Info.plist in Resources */,
+				10D7C7B825D3FD5900640C64 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		056EA1FA2250CD23515F78FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vedayu-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		09D771037790F5F904B9D092 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB2E12A7AF647233D4E850B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vedayu-ios/Pods-vedayu-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10D7C7A925D3FD5900640C64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D7C7B525D3FD5900640C64 /* MapViewController.swift in Sources */,
+				10784E2925D4A644003447BB /* CameraViewController.swift in Sources */,
+				102652A625D5B5E300ADEABF /* ArticleViewController.swift in Sources */,
+				102652C525D5C0AA00ADEABF /* Object.swift in Sources */,
+				10D7C7B125D3FD5900640C64 /* AppDelegate.swift in Sources */,
+				102652AA25D5B98E00ADEABF /* StreetsService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		10D7C7B625D3FD5900640C64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10D7C7B725D3FD5900640C64 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		10D7C7BB25D3FD5900640C64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10D7C7BC25D3FD5900640C64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		10D7C7BF25D3FD5900640C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10D7C7C025D3FD5900640C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10D7C7C225D3FD5900640C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A48B7E45B7168FCF7458294 /* Pods-vedayu-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J5K2VWXFK;
+				INFOPLIST_FILE = "vedayu-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mh.vedayu-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10D7C7C325D3FD5900640C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A9FEBA4109F73C2DEA57B53 /* Pods-vedayu-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J5K2VWXFK;
+				INFOPLIST_FILE = "vedayu-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mh.vedayu-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10D7C7A825D3FD5900640C64 /* Build configuration list for PBXProject "vedayu-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10D7C7BF25D3FD5900640C64 /* Debug */,
+				10D7C7C025D3FD5900640C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10D7C7C125D3FD5900640C64 /* Build configuration list for PBXNativeTarget "vedayu-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10D7C7C225D3FD5900640C64 /* Debug */,
+				10D7C7C325D3FD5900640C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10D7C7A525D3FD5900640C64 /* Project object */;
+}
