@@ -4,6 +4,7 @@ const getRequestOptions = (options) => {
   const requestOptions = {
     ...options,
     method: (options.method || 'GET').toUpperCase(),
+    baseURL: "http://ec2-3-139-239-182.us-east-2.compute.amazonaws.com:3000/",
   };
 
   if (options.json) {
